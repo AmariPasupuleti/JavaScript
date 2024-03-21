@@ -1,0 +1,151 @@
+<html>
+    <head>
+        <title>RAMEN</title>
+        <style>
+            tr{
+                background-color: orange;
+                color:aliceblue;
+                text-align: center;
+            }
+            dt{
+                font-weight: bold;
+                background-color:pink;
+                color: white;
+
+            }
+
+        </style>
+        <script>
+            function placeOrder(){
+                document.getElementById("orderSummary").style.display="block";
+                
+                Uname=document.getElementById("txtname");
+                mobile=document.getElementById("txtmobile");
+                ramen=document.getElementById("optRamen");
+                soup=document.getElementById("optSoup");
+                dango=document.getElementById("optDango");
+                bbq=document.getElementById("optBbq");
+
+                var mcost=0;
+                var acost=0;
+                var mname=" ";
+                var aname=" ";
+                if (ramen.checked){
+                    mcost=220;
+                    mname=ramen.value;
+                    if (dango.checked){
+                        acost=150;
+                        mcost+=acost;
+                        aname=dango.value;
+                    }
+
+                }
+
+                if (soup.checked){
+                    mcost=180;
+                    mname=soup.value;
+                    if (bbq.checked){
+                        acost=100;
+                        mcost+=acost;
+                        aname=bbq.value;
+                    }
+                    else{
+                        aname="No AD-on's";
+                    }
+                }
+
+                document.getElementById("lblName").innerHTML=Uname.value;
+                document.getElementById("lblMobile").innerHTML=mobile.value;
+                document.getElementById("lblMeal").innerHTML=mname;
+                document.getElementById("lbladd").innerHTML=aname;
+                document.getElementById("lblAmount").innerHTML=mcost;
+
+                
+
+
+            }
+        </script>
+
+    </head>
+    <body>
+        <div>
+            <font size="6">
+                <table width="700" border="2" cellspacing="5" cellpadding="5" align="center" id="orderform">
+                    <tr>
+                        <td>
+                            <img src="food.jpg" width="200" height="200">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center" style="color:blue" ><b>Customer Details</b></td>
+                    </tr>
+                    <tr>
+                        <td >Customer Name</td>
+                        <td><input type="text" id="txtname"></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile</td>
+                        <td><input type="text" id="txtmobile"></td>
+                    </tr>
+                    <tr>
+                        <td>🍥 Select Naruto Food Items 🍥</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="ramen.jpeg" width="200" height="200">
+                            <br>
+                            <input type="radio" name="meal" id="optRamen" value="optRamen">Naruto Fav Ramen(&#8377;220/-)
+                        </td>
+                        <td>
+                            <img src="soup.png" width="200" height="200">
+                            <br>
+                            <input type="radio" name="meal" id="optSoup" value="optSoup">Kakashi Fav SOUP(&#8377;180/-)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center" style="color:green">
+                            <b>Select Ad-on's</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="dango.jpg" width="200" height="200">
+                            <br>
+                            <input type="checkbox" name="meal" id="optDango" value="optDango">Dango(&#8377;150/-)
+
+                        </td>
+                        <td>
+                            <img src="bbq.jpg" width="200" height="200">
+                            <br>
+                            <input type="checkbox" name="meal" id="optBbq" value="optBbq">BBQ(&#8377;100/-)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  align="center" colspan="2">
+                            <input type="button" value="Place Order" onclick="placeOrder()">
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <dl id="orderSummary" style="display:none">
+                    <h2>Order Summary</h2>
+                    <dt>Customer Name</dt>
+                    <dd id="lblName"></dd>
+                    <dt>Mobile</dt>
+                    <dd id="lblMobile"></dd>
+                    <dt>Meal</dt>
+                    <dd id="lblMeal"></dd>
+                    <dt>AD-on's</dt>
+                    <dd id="lbladd"></dd>
+                    <dt>Total Bill Amount</dt>
+                    <dd id="lblAmount"></dd>
+                    <br>
+                    <input type="button" value="Print_Bill" onclick="window.print()">
+
+                </dl>
+
+            </font>
+
+        </div>
+    </body>
+</html>
