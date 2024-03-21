@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MadLibStory</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <h3><marquee>Are You Interested in This Fun GAME?</marquee></h3>
+        <pre class="demo">
+            <b>Title: A Mysterious Journey to <em><strong>[Place]</strong></em></b>
+
+            In the heart of the [Adjective] forest, [Name] stumbled upon an ancient [Noun]. Intrigued, [Name] decided to [Verb] inside, carrying only a [Noun] for protection. 
+
+            The walls were lined with [Plural Noun], each emitting a [Adjective] glow.Suddenly, [Name] heard a [Adjective] sound coming from behind a [Noun].
+
+            It was a [Adjective] [Creature]! [Name] quickly used the [Noun] to [Verb], surprising the creature. In gratitude, the creature offered [Name] three wishes.
+
+            For the first wish, [Name] asked for [Noun], which the creature granted with a wave of its [Body Part]. The second wish was for [Noun], and for the third,
+            
+            [Name] wished for the ability to [Verb].
+            
+            With new gifts and a heart full of [Emotion], [Name] left the [Noun], ready to [Verb] the world. The journey back through the [Adjective] forest was uneventful, 
+            
+            but [Name] knew that life would never be the same again.
+        </pre>
+        <div id="setvalues">
+            <label for="Place">Place:</label>
+            <input type="text" id="Place" placeholder="Type here..."><br>
+
+            <label for="Adjective">Adjective:</label>
+            <input type="text" id="Adjective" placeholder="Type here...">
+
+            <label for="Name">Name:</label>
+            <input type="text" id="Name" placeholder="Type here...">
+
+            <label for="Noun">Noun:</label>
+            <input type="text" id="Noun" placeholder="Type here...">
+
+            <label for="Verb">Verb:</label>
+            <input type="text" id="Verb" placeholder="Type here...">
+
+            <label for="PluralNoun">PluralNoun:</label>
+            <input type="text" id="PluralNoun" placeholder="Type here...">
+
+            <label for="Creature">Creature:</label>
+            <input type="text" id="Creature" placeholder="Type here...">
+
+            <label for="BodyPart">Body Part:</label>
+            <input type="text" id="BodyPart" placeholder="Type here...">
+
+            <label for="Emotion">Emotion:</label>
+            <input type="text" id="Emotion" placeholder="Type here...">
+
+
+            <button type="submit" id="submitButton" onclick="generate()" > Generate</button>
+
+        </div>   
+
+        <p id="remo">Your story...</p>
+
+    </body>
+</html>
